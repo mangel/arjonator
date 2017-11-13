@@ -5,9 +5,11 @@
  */
 package main;
 
+import arjonator.Arjonator;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import ui.ArjonatorConsoleUI;
+import ui.ArjonatorWindowUI;
 
 /**
  *
@@ -20,7 +22,9 @@ public class Main {
      */
     public static void main(String[] args) {
         try {
-            ArjonatorConsoleUI arjonatorConsole = new ArjonatorConsoleUI();            
+            Arjonator arjonator = new Arjonator();
+            ArjonatorWindowUI arjonatorWindowUI = new ArjonatorWindowUI(arjonator);
+            ArjonatorConsoleUI arjonatorConsole = new ArjonatorConsoleUI(arjonator);            
         } catch (FileNotFoundException fnfe) {
             System.out.println("The arjonator lines file doesn't exist");
             System.exit(0);

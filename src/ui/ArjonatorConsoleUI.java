@@ -17,8 +17,8 @@ public class ArjonatorConsoleUI {
     private Arjonator arjonator;
     private Scanner scanner;
     
-    public ArjonatorConsoleUI() throws IOException {
-        arjonator = new Arjonator();
+    public ArjonatorConsoleUI(Arjonator arjonator) throws IOException {
+        this.arjonator = arjonator;
         scanner = new Scanner(System.in);
         handleConsoleMenu();
     }
